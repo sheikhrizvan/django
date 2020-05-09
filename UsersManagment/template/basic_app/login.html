@@ -1,0 +1,22 @@
+{% extends 'basic_app/base.html' %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+  <h1>Welcome to Portfolio.com </h1>
+  <h3>Please Login</h3>
+  <form action="{% url 'basic_app:user_login' %}" method="POST">
+    {% csrf_token %}
+    <label for="username">UserName:</label>
+    <input type="text" name="username" placeholder="Enter Username">
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" >
+
+    <input type="submit" value="Login">
+
+  </form>
+</div>
+
+
+{% endblock %}
